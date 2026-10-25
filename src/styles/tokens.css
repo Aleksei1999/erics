@@ -1,0 +1,139 @@
+/*
+  Единственное место, где живёт тема сайта. Новый клиент = правка этого файла + шрифтов в layout.tsx.
+  Цвета задаются парой light/dark: секция с data-theme="dark" переключает все токены внутри себя.
+*/
+
+:root,
+[data-theme='light'] {
+  /* крем взят из фона ролика: блоки под ним стыкуются без шва */
+  --bg: #f5e7dc;
+  --surface: #efd9cc;
+  --fg: #33201a;
+  --fg-muted: #7a5e54;
+  --line: rgb(51 32 26 / 0.16);
+  --accent: #33201a;
+  --accent-fg: #f5e7dc;
+  --focus: #b8566a;
+  --danger: #b3261e;
+}
+
+/* розовый картон коробки — третья тема для одного-двух блоков */
+[data-theme='pink'] {
+  --bg: #e9b8ad;
+  --surface: #e2a99d;
+  --fg: #33201a;
+  --fg-muted: #6e4a40;
+  --line: rgb(51 32 26 / 0.2);
+  --accent: #33201a;
+  --accent-fg: #f5e7dc;
+  --focus: #33201a;
+  --danger: #8f1d16;
+}
+
+[data-theme='dark'] {
+  --bg: #2e1b15;
+  --surface: #3b251d;
+  --fg: #f5e7dc;
+  --fg-muted: #c4aa9e;
+  --line: rgb(245 231 220 / 0.16);
+  --accent: #e9b8ad;
+  --accent-fg: #2e1b15;
+  --focus: #e9b8ad;
+  --danger: #f2877e;
+}
+
+:root {
+  /* шрифты подключаются в layout.tsx через next/font и приходят сюда переменными */
+  --font-display-family: var(--ff-display), Georgia, serif;
+  --font-body-family: var(--ff-body), system-ui, sans-serif;
+
+  /* жидкая шкала: минимум на 390px, максимум на 1440px */
+  --fs-display: clamp(3rem, 1.5rem + 6.2vw, 7.25rem);
+  --fs-h1: clamp(2.5rem, 1.5rem + 4.1vw, 5.25rem);
+  --fs-h2: clamp(2rem, 1.35rem + 2.7vw, 3.75rem);
+  --fs-h3: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  --fs-h4: clamp(1.1875rem, 1.08rem + 0.45vw, 1.5rem);
+  --fs-body: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.75rem;
+
+  --lh-display: 0.92;
+  --lh-heading: 1.05;
+  --lh-body: 1.6;
+  --tracking-display: -0.035em;
+  --tracking-heading: -0.015em;
+  --tracking-eyebrow: 0.16em;
+  --weight-display: 560;
+
+  /* отступы: поля страницы, ритм секций, шаги внутри блоков */
+  --gutter: clamp(1rem, 0.4rem + 2.5vw, 2.5rem);
+  --container: 1440px;
+  --container-narrow: 760px;
+  --section-y: clamp(4.5rem, 3rem + 4.5vw, 8rem);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  --round-sm: 2px;
+  --round-md: 6px;
+  --round-lg: 12px;
+  --round-pill: 999px;
+
+  --easing-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --easing-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 700ms;
+
+  --header-h: 72px;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-focus: var(--focus);
+  --color-danger: var(--danger);
+
+  --font-display: var(--font-display-family);
+  --font-sans: var(--font-body-family);
+
+  --text-display: var(--fs-display);
+  --text-display--line-height: var(--lh-display);
+  --text-display--letter-spacing: var(--tracking-display);
+  --text-h1: var(--fs-h1);
+  --text-h1--line-height: var(--lh-heading);
+  --text-h1--letter-spacing: var(--tracking-heading);
+  --text-h2: var(--fs-h2);
+  --text-h2--line-height: var(--lh-heading);
+  --text-h2--letter-spacing: var(--tracking-heading);
+  --text-h3: var(--fs-h3);
+  --text-h3--line-height: 1.15;
+  --text-h4: var(--fs-h4);
+  --text-h4--line-height: 1.3;
+  --text-body: var(--fs-body);
+  --text-body--line-height: var(--lh-body);
+  --text-small: var(--fs-small);
+  --text-small--line-height: 1.5;
+  --text-eyebrow: var(--fs-eyebrow);
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: var(--tracking-eyebrow);
+
+  --radius-sm: var(--round-sm);
+  --radius-md: var(--round-md);
+  --radius-lg: var(--round-lg);
+  --radius-pill: var(--round-pill);
+
+  --ease-out: var(--easing-out);
+  --ease-in-out: var(--easing-in-out);
+}
