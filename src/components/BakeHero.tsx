@@ -152,17 +152,23 @@ function Stage({
   );
 }
 
+// финальная надпись слева от коробки: поверх неё не читается
 function Final({ progress }: { progress: MotionValue<number> }) {
   const { opacity, y } = useFade(progress, STAGES[5].range, true);
   return (
-    <motion.div style={{ opacity, y }} className="absolute inset-x-0 bottom-[5svh] text-center">
+    <motion.div
+      style={{ opacity, y }}
+      className="absolute inset-x-0 top-[calc(var(--header-h)+1.5rem)] md:top-1/2 md:-translate-y-1/2"
+    >
       <Container>
-        <p className="text-small font-medium text-muted">
-          Friday from 8am · Saturday from 9am · until sold out
-        </p>
-        <p className="mx-auto mt-3 max-w-[16ch] font-display text-h1 [font-weight:var(--weight-display)]">
-          {nb('A good morning, boxed')}
-        </p>
+        <div className="max-w-[26rem] md:max-w-[19rem]">
+          <p className="font-display text-h1 [font-weight:var(--weight-display)] text-heading">
+            {nb('A good morning, boxed')}
+          </p>
+          <p className="mt-4 text-body text-fg/80">
+            Friday from 8am, Saturday from 9am, until sold out.
+          </p>
+        </div>
       </Container>
     </motion.div>
   );
