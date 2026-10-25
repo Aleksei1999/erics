@@ -143,7 +143,7 @@ export default function Home() {
           </Container>
         </section>
 
-        <Section id="visit">
+        <section data-theme="sage" id="visit" className="bg-bg py-[var(--section-y)] text-fg">
           <Container className="grid gap-12 md:grid-cols-12">
             <div className="md:col-span-5">
               <Heading size="h1" className="max-w-[9ch]">
@@ -178,7 +178,7 @@ export default function Home() {
               </p>
             </dl>
           </Container>
-        </Section>
+        </section>
       </main>
       <Footer />
     </>

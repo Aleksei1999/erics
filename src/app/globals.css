@@ -41,6 +41,7 @@
   h2,
   h3,
   h4 {
+    color: var(--heading);
     font-variation-settings:
       'SOFT' 100,
       'WONK' 0;

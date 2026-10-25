@@ -5,40 +5,55 @@
 
 :root,
 [data-theme='light'] {
-  /* крем взят из фона ролика: блоки под ним стыкуются без шва */
-  --bg: #f5e7dc;
-  --surface: #efd9cc;
-  --fg: #33201a;
-  --fg-muted: #7a5e54;
-  --line: rgb(51 32 26 / 0.16);
-  --accent: #33201a;
-  --accent-fg: #f5e7dc;
-  --focus: #b8566a;
+  /* палитра Vanilla Cream / Blush Petal / Rosewood / Sage Leaf / Midnight Lagoon: текст розово-коричневый, не чёрный */
+  --bg: #fff7e6;
+  --surface: #fbecd6;
+  --fg: #7d3e48;
+  --fg-muted: #94606a;
+  --heading: #b46a72;
+  --line: rgb(125 62 72 / 0.18);
+  --accent: #9c5560;
+  --accent-fg: #fff7e6;
+  --focus: #b46a72;
   --danger: #b3261e;
 }
 
-/* розовый картон коробки — третья тема для одного-двух блоков */
 [data-theme='pink'] {
-  --bg: #e9b8ad;
-  --surface: #e2a99d;
-  --fg: #33201a;
-  --fg-muted: #6e4a40;
-  --line: rgb(51 32 26 / 0.2);
-  --accent: #33201a;
-  --accent-fg: #f5e7dc;
-  --focus: #33201a;
+  --bg: #f7c8d3;
+  --surface: #f2b8c6;
+  --fg: #6e3640;
+  --fg-muted: #7a434d;
+  --heading: #8f4954;
+  --line: rgb(110 54 64 / 0.2);
+  --accent: #7d3e48;
+  --accent-fg: #fff7e6;
+  --focus: #6e3640;
   --danger: #8f1d16;
 }
 
+[data-theme='sage'] {
+  --bg: #a8b58a;
+  --surface: #9dab7d;
+  --fg: #2f3a22;
+  --fg-muted: #3a4729;
+  --heading: #2f3a22;
+  --line: rgb(47 58 34 / 0.22);
+  --accent: #2f3a22;
+  --accent-fg: #fff7e6;
+  --focus: #2f3a22;
+  --danger: #7a1a14;
+}
+
 [data-theme='dark'] {
-  --bg: #2e1b15;
-  --surface: #3b251d;
-  --fg: #f5e7dc;
-  --fg-muted: #c4aa9e;
-  --line: rgb(245 231 220 / 0.16);
-  --accent: #e9b8ad;
-  --accent-fg: #2e1b15;
-  --focus: #e9b8ad;
+  --bg: #2d3a47;
+  --surface: #36475a;
+  --fg: #fff7e6;
+  --fg-muted: #b9c3cf;
+  --heading: #f7c8d3;
+  --line: rgb(255 247 230 / 0.16);
+  --accent: #f7c8d3;
+  --accent-fg: #2d3a47;
+  --focus: #f7c8d3;
   --danger: #f2877e;
 }
 
@@ -98,6 +113,7 @@
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-fg: var(--fg);
+  --color-heading: var(--heading);
   --color-muted: var(--fg-muted);
   --color-line: var(--line);
   --color-accent: var(--accent);

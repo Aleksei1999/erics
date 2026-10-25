@@ -9,30 +9,25 @@ import { cn } from '@/lib/cn';
 import { nb } from '@/lib/typo';
 import { site } from '@/site.config';
 
-const COUNT = 266;
+const COUNT = 300;
 
-// ролик из пяти переходов: мука (48), шоколад (96), лужа (158), коробка (203), полная коробка (265)
-const KEYFRAMES: [number[], number[]] = [
-  [0, 0.04, 0.15, 0.23, 0.33, 0.41, 0.5, 0.56, 0.63, 0.69, 0.87, 1],
-  [0, 0, 48, 48, 96, 96, 158, 158, 203, 203, 265, 265],
-];
-
+// кадры уже выровнены по скорости движения: прокрутка идёт без остановок, только последний экран стоит
 // круассан правее центра кадра, коробка по центру: на телефоне ведём «камеру» за ними
 const FOCUS: [number[], number[]] = [
-  [0, 160, 203, 265],
+  [0, 190, 234, 299],
   [0.62, 0.6, 0.5, 0.5],
 ];
 
-// на телефоне кадр ниже текста; крем = фон ролика и --bg
+// на телефоне кадр ниже текста; matte = крем фона самого ролика
 const PORTRAIT = { scale: 1.9, y: 0.64, matte: '#f5e7dc' };
 
 const STAGES = [
   { id: 'start', range: [0, 0.07] },
-  { id: 'wheat', range: [0.13, 0.25] },
-  { id: 'hand', range: [0.31, 0.43] },
-  { id: 'dairy', range: [0.48, 0.58] },
-  { id: 'box', range: [0.62, 0.72] },
-  { id: 'end', range: [0.85, 1] },
+  { id: 'wheat', range: [0.06, 0.21] },
+  { id: 'hand', range: [0.23, 0.4] },
+  { id: 'dairy', range: [0.43, 0.59] },
+  { id: 'box', range: [0.62, 0.78] },
+  { id: 'end', range: [0.82, 1] },
 ] as const;
 
 export function BakeHero() {
@@ -40,7 +35,6 @@ export function BakeHero() {
     <ScrollSequence
       frames={{ dir: '/bake', count: COUNT }}
       length={15}
-      keyframes={KEYFRAMES}
       focus={FOCUS}
       portrait={PORTRAIT}
       theme="light"
